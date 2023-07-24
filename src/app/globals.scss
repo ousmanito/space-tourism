@@ -32,11 +32,12 @@ body {
 .nav-text {
   letter-spacing: 2.7px;
   font-size: clamp(1rem, 3vw, 1.5rem);
-}
-.nav-text .nav-item__index {
-  letter-spacing: initial;
-  font-weight: 500;
-  margin-right: 1rem;
+
+  .nav-item__index {
+    letter-spacing: initial;
+    font-weight: 500;
+    margin-right: 1rem;
+  }
 }
 
 h5 {
@@ -54,5 +55,3 @@ li {
 .active {
   color: red;
 }
-
-/*# sourceMappingURL=globals.css.map */

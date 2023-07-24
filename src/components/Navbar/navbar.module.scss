@@ -1,0 +1,29 @@
+.navbar {
+  margin-top: 2rem;
+  .navbar-container {
+    display: flex;
+    position: relative;
+    width: 75vw;
+    margin-left: 12.5vw;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  .line {
+    position: absolute;
+    background-color: black;
+    height: 1px;
+    width: 40%;
+    left: 10%;
+  }
+}
