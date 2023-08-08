@@ -5,23 +5,17 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: auto;
-  margin-top: 12.5%;
-}
+  margin-top: 12.5%; }
+
 .header {
-  width: fit-content;
-  h1 {
+  width: fit-content; }
+  .header h1 {
     font-size: clamp(3rem, 32vw, 15rem);
     font-family: var(--bellefair);
-    font-weight: 400;
-  }
-  h2 {
-  }
-  h5 {
+    font-weight: 400; }
+  .header h5 {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
-    font-weight: 300;
-  }
-  p {
+    font-weight: 300; }
+  .header p {
     font-size: clamp(1.5rem, 4vw, 1.75rem);
-    width: clamp(300px, 30%, 30vw);
-  }
-}
+    width: clamp(300px, 30%, 30vw); }
