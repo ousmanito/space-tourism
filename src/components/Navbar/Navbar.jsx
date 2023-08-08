@@ -26,13 +26,12 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles["navbar-container"]}>
         <Image src={Logo} alt="logo" />
-        <span className={styles.line}></span>
         <ul>
           {Object.keys(links).map((link, index) => {
             if (pathname === "/") pathname = "/home";
             const isActive = pathname.match("/".concat(link));
             return (
-              <li className="nav-text">
+              <li className="nav-text" key={index}>
                 <Link
                   href={link}
                   alt=""
@@ -42,10 +41,10 @@ const Navbar = () => {
                     "nav-text",
                   ].join(" ")}
                 >
-                  <span className="nav-item__index">
+                  <span className={styles["nav-item__index"]}>
                     {String(index).padStart(2, "0")}
                   </span >
-                  <span className='nav-item__name'>{links[link]}</span>
+                  <span className={styles['nav-item__name']}>{links[link]}</span>
                 </Link>
               </li>
             );

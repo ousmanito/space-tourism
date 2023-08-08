@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import Acceuil from '@/app/acceuil/Acceuil'
-import styles from './page.module.css'
+import Acceuil from'@/app/acceuil/Acceuil'
+
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Acceuil/>
     </main>
   )
