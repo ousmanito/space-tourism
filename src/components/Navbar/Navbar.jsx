@@ -4,14 +4,10 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "@/assets/shared/logo.svg";
+import Logo from "/public/assets/shared/logo.svg";
 import Image from "next/image";
-import { Barlow_Condensed } from "next/font/google";
+import { barlow } from "@/app/fonts";
 
-const barlow = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
 
 const Navbar = () => {
   let pathname = usePathname();
