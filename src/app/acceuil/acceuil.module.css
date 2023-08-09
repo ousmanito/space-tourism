@@ -1,6 +1,6 @@
 .bg {
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   top: 0;
   bottom: 0;
@@ -17,6 +17,15 @@
   @media screen and (max-width: 768px) {
     .bg {
       background-image: url("/assets/home/background-home-mobile.jpg"); } }
+  @media screen and (max-height: 830px) and (max-width: 1400px) {
+    .bg {
+      height: calc(100vh + 20%); } }
+  @media screen and (max-height: 780px) and (max-width: 1600px) {
+    .bg {
+      height: calc(100vh + 25%); } }
+  @media screen and (max-height: 650px) and (max-width: 1600px) {
+    .bg {
+      height: calc(165vh); } }
 
 .container {
   display: grid;
@@ -33,11 +42,10 @@
       margin-top: 12.5%; } }
   @media screen and (max-width: 500px) {
     .container {
-      margin-top: 4rem; } }
+      margin-top: 10%; } }
   @media screen and (max-width: 1400px) {
     .container {
       grid-template-columns: 1fr;
-      margin-top: 1rem;
       text-align: center; }
       .container .header p {
         width: 100%; }
@@ -85,10 +93,9 @@
     .button {
       width: 200px;
       height: 200px; } }
-  @media screen and (max-width: 707px) {
+  @media screen and (min-height: 770px) {
     .button {
-      width: 150px;
-      height: 150px; } }
+      margin-top: 5rem; } }
 
 .button {
   background: #d1d1d0;
@@ -117,4 +124,4 @@
   padding: 0; }
   @media screen and (max-width: 1400px) {
     .button h2 {
-      font-size: clamp(1rem, 4.5vw, 2rem); } }
+      font-size: clamp(1.5rem, 5.5vw, 2.5rem); } }
