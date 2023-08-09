@@ -71,8 +71,10 @@
 
 .btn-container {
   display: flex;
+  z-index: 2;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 2rem; }
 
 .button {
   box-sizing: content-box;
@@ -95,31 +97,42 @@
       height: 200px; } }
   @media screen and (min-height: 770px) {
     .button {
-      margin-top: 5rem; } }
+      margin-top: 7rem; } }
 
 .button {
   background: #d1d1d0;
-  z-index: 2;
   background: linear-gradient(90deg, #d1d1d0 0%, #dddddb 55%, white 100%);
   border: 1px solid rgba(0, 0, 0, 0.23);
   transition: box-shadow 0.3s ease;
-  box-shadow: 0px 0px 30px grey; }
-  @media screen and (max-width: 1400px) {
-    .button {
-      box-shadow: none; } }
+  box-shadow: 0px 0px 30px grey;
+  animation: breathe 2s infinite ease; }
+
+@keyframes breathe {
+  0% {
+    box-shadow: 0px 0px 10px grey; }
+  50% {
+    box-shadow: 0px 0px 40px grey; }
+  100% {
+    box-shadow: 0px 0px 10px grey; } }
+
+@keyframes deeep-breathe {
+  0% {
+    box-shadow: 0px 0px 5px grey; }
+  50% {
+    box-shadow: 0px 0px 55px grey; }
+  100% {
+    box-shadow: 0px 0px 5px grey; } }
 
 .button:hover {
-  box-shadow: 0 0 20px white; }
-  @media screen and (max-width: 1400px) {
-    .button:hover {
-      box-shadow: none; } }
+  box-shadow: 0 0 20px white;
+  animation: breathe 1.2s infinite ease; }
 
 .button h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-family: var(--bellefair);
   font-weight: 600;
   user-select: none;
-  color: rgba(0, 0, 0, 0.56);
+  color: rgba(0, 0, 0, 0.66);
   margin: 0;
   padding: 0; }
   @media screen and (max-width: 1400px) {
