@@ -73,11 +73,10 @@
   display: flex;
   z-index: 2;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem; }
+  align-items: center; }
 
 .button {
-  box-sizing: content-box;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +94,7 @@
     .button {
       width: 200px;
       height: 200px; } }
-  @media screen and (min-height: 770px) {
+  @media (min-height: 870px) {
     .button {
       margin-top: 7rem; } }
 
@@ -126,6 +125,8 @@
 .button:hover {
   box-shadow: 0 0 20px white;
   animation: breathe 1.2s infinite ease; }
+  .button:hover h2 {
+    color: rgba(0, 0, 0, 0.46); }
 
 .button h2 {
   font-size: clamp(2rem, 5vw, 3rem);
@@ -133,6 +134,7 @@
   font-weight: 600;
   user-select: none;
   color: rgba(0, 0, 0, 0.66);
+  transition: all 0.7s ease;
   margin: 0;
   padding: 0; }
   @media screen and (max-width: 1400px) {
