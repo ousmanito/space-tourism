@@ -60,6 +60,10 @@
   }
 }
 .header {
+  h5,
+  p {
+    color: var(--light-blue);
+  }
   h1 {
     font-size: clamp(2rem, 15vw, 12rem);
     font-family: var(--bellefair);
