@@ -1,10 +1,10 @@
-import Acceuil from'@/app/acceuil/Acceuil'
+import Page from'@/app/home/page'
 
 
 export default function Home() {
   return (
     <main>
-      <Acceuil/>
+      <Page/>
     </main>
   )
 }

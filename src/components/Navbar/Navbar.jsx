@@ -48,7 +48,10 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <nav>
         <div className={styles["navbar-container"]}>
-          <Image src={Logo} alt="logo" />
+          <a href="/home">
+            <Image src={Logo} alt="logo" />
+          </a>
+
           {isOpen && (
             <span className={styles["toggle-btn"]} onClick={() => toggleMenu()}>
               <Image src={menu ? close : bars} width={30} alt="toggleIcon" />
@@ -63,7 +66,9 @@ const Navbar = () => {
                   const isActive = pathname.match("/".concat(link));
                   return (
                     <li
-                      className={[styles["nav-text"], barlow.className].join(" ")}
+                      className={[styles["nav-text"], barlow.className].join(
+                        " ",
+                      )}
                       key={index}
                     >
                       <Link href={link} alt="">
@@ -85,38 +90,37 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-
         </div>
       </nav>
-        <div className={styles["sidebar-container"]}>
-          <ul className={styles["sidebar"]}>
-            {Object.keys(links).map((link, index) => {
-              console.log(link, index);
-              if (pathname === "/") pathname = "/home";
-              const isActive = pathname.match("/".concat(link));
-              return (
-                <li
-                  className={[styles["nav-text"], barlow.className].join(" ")}
-                  key={index}
-                >
-                  <Link href={link} alt="">
-                    <span className={styles["nav-item__index"]}>
-                      {String(index).padStart(2, "0")}
-                    </span>
-                    <span
-                      className={[
-                        styles["nav-item__name"],
-                        isActive ? styles.active : null,
-                      ].join(" ")}
-                    >
-                      {links[link]}
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+      <div className={styles["sidebar-container"]}>
+        <ul className={styles["sidebar"]}>
+          {Object.keys(links).map((link, index) => {
+            console.log(link, index);
+            if (pathname === "/") pathname = "/home";
+            const isActive = pathname.match("/".concat(link));
+            return (
+              <li
+                className={[styles["nav-text"], barlow.className].join(" ")}
+                key={index}
+              >
+                <Link href={link} alt="">
+                  <span className={styles["nav-item__index"]}>
+                    {String(index).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={[
+                      styles["nav-item__name"],
+                      isActive ? styles.active : null,
+                    ].join(" ")}
+                  >
+                    {links[link]}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
