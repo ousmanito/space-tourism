@@ -11,6 +11,9 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1; }
+  @media screen and (min-width: 1500px) {
+    .bg {
+      background-image: url("/assets/home/background-home-4k.jpg"); } }
   @media screen and (max-width: 1024px) {
     .bg {
       background-image: url("/assets/home/background-home-tablet.jpg"); } }
