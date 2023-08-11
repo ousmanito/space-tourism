@@ -4,6 +4,7 @@ import styles from "./destination.module.css";
 import Image from "next/image";
 import { bellefair } from "../fonts";
 import planets from "public/assets/data.json";
+import Title from '@/components/Title/Title'
 
 export default function Page() {
   const [planet, setPlanet] = useState("Moon");
@@ -19,10 +20,7 @@ export default function Page() {
     <>
       <span className={styles.bg}></span>
       <div className={[styles.container, bellefair.variable].join(" ")}>
-        <div className={styles.title}>
-          <span className={styles.index}>{"1".padStart(2, "0")}</span>
-          <span>Pick your destination</span>
-        </div>
+        <Title id={1}/>
         <div className={styles.main}>
           <div className={styles.image}>
             <Image
