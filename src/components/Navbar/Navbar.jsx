@@ -61,7 +61,6 @@ const Navbar = () => {
             <div className={styles["navlist-container"]}>
               <ul>
                 {Object.keys(links).map((link, index) => {
-                  console.log(link, index);
                   if (pathname === "/") pathname = "/home";
                   const isActive = pathname.match("/".concat(link));
                   return (
@@ -70,8 +69,9 @@ const Navbar = () => {
                         " ",
                       )}
                       key={index}
+                      
                     >
-                      <Link href={link} alt="">
+                      <Link href={link} alt="" >
                         <span className={styles["nav-item__index"]}>
                           {String(index).padStart(2, "0")}
                         </span>
@@ -100,10 +100,11 @@ const Navbar = () => {
             const isActive = pathname.match("/".concat(link));
             return (
               <li
+                onClick={() => toggleMenu()}
                 className={[styles["nav-text"], barlow.className].join(" ")}
                 key={index}
               >
-                <Link href={link} alt="">
+                <Link href={link} alt="" >
                   <span className={styles["nav-item__index"]}>
                     {String(index).padStart(2, "0")}
                   </span>
