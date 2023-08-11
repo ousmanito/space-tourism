@@ -1,5 +1,6 @@
 .navbar {
   overflow-x: hidden;
+  user-select: none;
   margin-top: 2rem;
   .navbar-container {
     display: flex;
