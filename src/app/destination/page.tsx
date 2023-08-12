@@ -3,12 +3,20 @@ import React, { useState } from "react";
 import styles from "./destination.module.css";
 import Image from "next/image";
 import { bellefair } from "../fonts";
-import planets from "public/assets/data.json";
-import Title from '@/components/Title/Title'
+import Title from "@/components/Title/Title";
+
+var planets = require("public/assets/data");
+
+type Planet = {
+  name: string;
+  description: string;
+  distance: string;
+  travel: string;
+};
 
 export default function Page() {
   const [planet, setPlanet] = useState("Moon");
-  const planetObject = planets.destinations.find((p) => {
+  const planetObject = planets.destinations.find((p: Planet) => {
     return p.name == planet;
   });
   const imageUrl = `/assets/destination/image-${planet.toLowerCase()}.webp`;
@@ -20,7 +28,7 @@ export default function Page() {
     <>
       <span className={styles.bg}></span>
       <div className={[styles.container, bellefair.variable].join(" ")}>
-        <Title id={1}/>
+        <Title id={1} />
         <div className={styles.main}>
           <div className={styles.image}>
             <Image
@@ -35,13 +43,12 @@ export default function Page() {
           <div className={styles.content}>
             <div className={styles.nav}>
               <ul>
-                {planets.destinations.map((obj, index) => {
-                  console.log(planet, obj.name);
+                {planets.destinations.map((obj: Planet, index: number) => {
                   return (
                     <li
                       key={index}
                       className={planet == obj.name ? styles.active : ""}
-                      onClick={(e) => setPlanet(e.target.innerHTML)}
+                      onClick={(e: React.MouseEvent<HTMLLIElement>) => setPlanet(e.currentTarget.innerHTML)}
                     >
                       {obj.name}
                     </li>

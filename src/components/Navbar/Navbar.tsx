@@ -10,6 +10,14 @@ import close from "/public/assets/shared/icon-close.svg";
 import Image from "next/image";
 import { barlow } from "@/app/fonts";
 
+type Pages = {
+  home: string;
+  destination: string;
+  crew: string;
+  terminology: string;
+  [key: string]: string;
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [menu, setMenu] = useState(false);
@@ -20,8 +28,8 @@ const Navbar = () => {
       } else {
         setIsOpen(true);
       }
-      window.addEventListener("resize", (e) => {
-        let width = e.target.innerWidth;
+      window.addEventListener("resize", () => {
+        let width = window.innerWidth;
         if (width > 1400) {
           setIsOpen(false);
         } else {
@@ -32,12 +40,15 @@ const Navbar = () => {
   }, []);
   const toggleMenu = () => {
     setMenu(!menu);
-    document
-      .querySelector(`.${styles["sidebar-container"]}`)
-      .classList.toggle(styles.open);
+    let sidebar: HTMLElement | null = document.querySelector(
+      `.${styles["sidebar-container"]}`,
+    );
+    if (sidebar) {
+      sidebar.classList.toggle(styles.open);
+    }
   };
   let pathname = usePathname();
-  const links = {
+  const links: Pages = {
     home: "Home",
     destination: "Destination",
     crew: "Crew",
@@ -60,7 +71,7 @@ const Navbar = () => {
           {!isOpen && (
             <div className={styles["navlist-container"]}>
               <ul>
-                {Object.keys(links).map((link, index) => {
+                {Object.keys(links).map((link: string, index: number) => {
                   if (pathname === "/") pathname = "/home";
                   const isActive = pathname.match("/".concat(link));
                   return (
@@ -69,9 +80,8 @@ const Navbar = () => {
                         " ",
                       )}
                       key={index}
-                      
                     >
-                      <Link href={link} alt="" >
+                      <Link href={link}>
                         <span className={styles["nav-item__index"]}>
                           {String(index).padStart(2, "0")}
                         </span>
@@ -94,7 +104,7 @@ const Navbar = () => {
       </nav>
       <div className={styles["sidebar-container"]}>
         <ul className={styles["sidebar"]}>
-          {Object.keys(links).map((link, index) => {
+          {Object.keys(links).map((link: string, index: number) => {
             console.log(link, index);
             if (pathname === "/") pathname = "/home";
             const isActive = pathname.match("/".concat(link));
@@ -104,7 +114,7 @@ const Navbar = () => {
                 className={[styles["nav-text"], barlow.className].join(" ")}
                 key={index}
               >
-                <Link href={link} alt="" >
+                <Link href={link}>
                   <span className={styles["nav-item__index"]}>
                     {String(index).padStart(2, "0")}
                   </span>
