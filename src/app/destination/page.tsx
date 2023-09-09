@@ -5,7 +5,7 @@ import Image from "next/image";
 import { bellefair } from "../fonts";
 import Title from "@/components/Title/Title";
 
-var planets = require("public/assets/data");
+var data = require("public/assets/data");
 
 type Planet = {
   name: string;
@@ -16,7 +16,7 @@ type Planet = {
 
 export default function Page() {
   const [planet, setPlanet] = useState("Moon");
-  const planetObject = planets.destinations.find((p: Planet) => {
+  const planetObject = data.destinations.find((p: Planet) => {
     return p.name == planet;
   });
   const imageUrl = `/assets/destination/image-${planet.toLowerCase()}.webp`;
@@ -43,12 +43,14 @@ export default function Page() {
           <div className={styles.content}>
             <div className={styles.nav}>
               <ul>
-                {planets.destinations.map((obj: Planet, index: number) => {
+                {data.destinations.map((obj: Planet, index: number) => {
                   return (
                     <li
                       key={index}
                       className={planet == obj.name ? styles.active : ""}
-                      onClick={(e: React.MouseEvent<HTMLLIElement>) => setPlanet(e.currentTarget.innerHTML)}
+                      onClick={(e: React.MouseEvent<HTMLLIElement>) =>
+                        setPlanet(e.currentTarget.innerHTML)
+                      }
                     >
                       {obj.name}
                     </li>
