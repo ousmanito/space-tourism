@@ -1,7 +1,5 @@
 .bg {
   position: absolute;
-  min-height: 100vh;
-  width: 100vw;
   top: 0;
   bottom: 0;
   left: 0;
@@ -10,71 +8,42 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   z-index: -1;
-  // @media screen and (min-width: 1500px) {
-  //   background-image: url("/assets/crew/background-crew-4k.jpg");
-  // }
-  @media screen and (max-width: 1024px) {
-    background-image: url("/assets/crew/background-crew-tablet.jpg");
-  }
-  @media screen and (max-width: 768px) {
-    background-image: url("/assets/crew/background-crew-mobile.jpg");
-  }
-  @media screen and (max-height: 930px) {
-    height: calc(100vh + 10%);
-  }
-  @media screen and (max-height: 900px) {
-    height: calc(100vh + 25%);
-  }
-  @media screen and (max-width: 1400px) and (max-height: 1080px) {
-    height: calc(100vh + 10%);
-  }
-
-  @media screen and (max-width: 1900px) and (max-height: 1080px) {
-    height: calc(100vh + 10%);
-  }
-  @media screen and (max-width: 1900px) and (max-height: 980px) {
-    height: calc(100vh + 35%);
-  }
-  @media screen and (max-width: 1900px) and (max-height: 800px) {
-    height: calc(100vh + 65%);
-  }
-  @media screen and (max-width: 1900px) and (max-height: 800px) {
-    height: calc(100vh + 85%);
-  }
 }
 
 .container {
-  @media screen and (min-height: 1200px) {
-    margin-top: 7rem;
-  }
-  margin-top: 2rem;
+  width: 100%;
+  margin-top: 3rem;
 }
 
 .main {
-  display: flex;
-  width: 75%;
-  margin-left: 12.5%;
-  height: 80vh;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 4rem;
+  padding: 1rem;
   user-select: none;
-  margin-top: 3rem;
-  position: fixed;
-  bottom: 0;
-  @media screen and (max-width: 1400px) {
+
+  @media screen and (max-width: 1600px) {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-self: center;
+    .card {
+      margin-top: 5rem;
+      justify-content: space-around;
+    }
   }
   & > div {
     width: fit-content;
+    height: fit-content;
+    place-self: center;
   }
   .left {
     display: flex;
-    gap: 1rem;
     margin-top: 3rem;
-    @media screen and (min-height: 1200px) {
-      align-items: flex-start;
-    }
     h3,
     h2 {
       font-family: var(--bellefair);
@@ -83,18 +52,18 @@
       width: fit-content;
     }
     h3 {
-      font-size: clamp(2rem, 7vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.3rem);
       font-weight: 300;
       color: grey;
     }
 
     h2 {
-      font-size: clamp(4rem, 10vw, 5rem);
+      font-size: clamp(3rem, 7vw, 4.5rem);
       font-weight: 300;
     }
 
     p {
-      font-size: clamp(1.25rem, 5vw, 1.75rem);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
       color: var(--light-blue);
       width: 80%;
       line-height: 133%;
@@ -107,14 +76,78 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 0 2rem;
   }
-  .right {
-    align-self: flex-end;
-    overflow: hidden;
-    width: 75%;
-    @media screen and (max-width: 1200px) {
-      align-self: center;
-      width: fit-content;
+  .card {
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    margin-left: 4rem;
+    border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    display: flex;
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: initial;
+      width: 100%;
+      padding: 0rem;
+      margin: 0;
+      border-radius: 0;
+      border: 0;
+      box-shadow: initial;
+      margin-top: 3rem;
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        align-self: center !important;
+        margin-top: 3rem;
+        margin-left: 0;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      align-items: center;
+    }
+    .image {
+      place-self: center;
+      img {
+        height: 300px;
+        width: auto;
+      }
+    }
+    .details {
+      margin-left: 3rem;
+      align-self: flex-end;
+      .birthdate,
+      .missions,
+      .duration {
+        margin-bottom: 3rem;
+      }
+    }
+    h2 {
+      font-family: var(--bellefair);
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: clamp(1.25rem, 7vw, 1.75rem);
+      margin: 0.65rem 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "●";
+        font-size: 10px;
+        margin-right: 1rem;
+        color: var(--lightblue);
+      }
+    }
+    li,
+    h3 {
+      font-weight: 400;
+      font-size: clamp(1rem, 5vw, 1.5rem);
+      color: var(--light-blue);
     }
   }
 
