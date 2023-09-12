@@ -1,20 +1,18 @@
 @charset "UTF-8";
 .bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-image: url("/assets/crew/background-crew-desktop.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1; }
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh; }
 
 .container {
   width: 100%;
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  user-select: none; }
 
 .main {
   display: grid;
@@ -23,8 +21,7 @@
   width: 90%;
   margin-left: 5%;
   margin-top: 4rem;
-  padding: 1rem;
-  user-select: none; }
+  padding: 1rem; }
   @media screen and (max-width: 1600px) {
     .main {
       display: flex;
@@ -33,32 +30,24 @@
       .main .card {
         margin-top: 5rem;
         justify-content: space-around; } }
+  @media screen and (max-width: 750px) {
+    .main .image img {
+      height: 300px;
+      margin: 0 4.5rem; } }
+  @media screen and (max-width: 500px) {
+    .main .image img {
+      height: 200px;
+      margin: 0 1rem; }
+    .main .card .text h2 {
+      font-size: 2rem; }
+    .main .card .text h3 {
+      font-size: 1.65rem; }
+    .main .card .text p {
+      font-size: 1.25rem; } }
   .main > div {
     width: fit-content;
     height: fit-content;
     place-self: center; }
-  .main .left {
-    display: flex;
-    margin-top: 3rem; }
-    .main .left h3,
-    .main .left h2 {
-      font-family: var(--bellefair);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      width: fit-content; }
-    .main .left h3 {
-      font-size: clamp(2.5rem, 5vw, 3.3rem);
-      font-weight: 300;
-      color: grey; }
-    .main .left h2 {
-      font-size: clamp(3rem, 7vw, 4.5rem);
-      font-weight: 300; }
-    .main .left p {
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
-      color: var(--light-blue);
-      width: 80%;
-      line-height: 133%;
-      margin-bottom: 2rem; }
   .main .text {
     width: 100%;
     display: flex;
@@ -66,66 +55,6 @@
     align-items: center;
     text-align: center;
     margin: 0 2rem; }
-  .main .card {
-    backdrop-filter: blur(20px);
-    padding: 2rem;
-    margin-left: 4rem;
-    border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    display: flex; }
-    @media screen and (max-width: 750px) {
-      .main .card {
-        flex-direction: column;
-        align-items: center;
-        backdrop-filter: initial;
-        width: 100%;
-        padding: 0rem;
-        margin: 0;
-        border-radius: 0;
-        border: 0;
-        box-shadow: initial;
-        margin-top: 3rem; }
-        .main .card .details {
-          display: flex;
-          flex-direction: column;
-          align-self: center !important;
-          margin-top: 3rem;
-          margin-left: 0; } }
-    @media screen and (max-width: 500px) {
-      .main .card {
-        align-items: center; } }
-    .main .card .image {
-      place-self: center; }
-      .main .card .image img {
-        height: 300px;
-        width: auto; }
-    .main .card .details {
-      margin-left: 3rem;
-      align-self: flex-end; }
-      .main .card .details .birthdate,
-      .main .card .details .missions,
-      .main .card .details .duration {
-        margin-bottom: 3rem; }
-    .main .card h2 {
-      font-family: var(--bellefair);
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: clamp(1.25rem, 7vw, 1.75rem);
-      margin: 0.65rem 0; }
-    .main .card li {
-      display: flex;
-      align-items: center; }
-      .main .card li::before {
-        content: "●";
-        font-size: 10px;
-        margin-right: 1rem;
-        color: var(--lightblue); }
-    .main .card li,
-    .main .card h3 {
-      font-weight: 400;
-      font-size: clamp(1rem, 5vw, 1.5rem);
-      color: var(--light-blue); }
   .main .footer {
     width: fit-content; }
   .main .dot {
@@ -137,6 +66,9 @@
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer; }
+    @media screen and (max-width: 750px) {
+      .main .dot {
+        margin-top: 3rem; } }
   .main .active {
     background-color: white; }
   .main .previous,
@@ -145,3 +77,106 @@
     cursor: pointer; }
   .main .next {
     transform: rotate(180deg); }
+
+.left {
+  display: flex;
+  margin-top: 3rem; }
+  .left h3,
+  .left h2 {
+    font-family: var(--bellefair);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    width: fit-content; }
+  .left h3 {
+    font-size: clamp(2.5rem, 5vw, 3.3rem);
+    font-weight: 300;
+    color: grey; }
+  .left h2 {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 300; }
+  .left p {
+    font-size: clamp(1.75rem, 3vw, 1.8rem);
+    color: var(--light-blue);
+    width: 80%;
+    line-height: 133%;
+    margin-bottom: 2rem; }
+
+.card {
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  margin-left: 4rem;
+  border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex; }
+  @media screen and (max-width: 750px) {
+    .card {
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: initial;
+      width: 100%;
+      padding: 0rem;
+      margin: 0;
+      border-radius: 0;
+      border: 0;
+      box-shadow: initial;
+      margin-top: 3rem; }
+      .card .details {
+        display: flex;
+        flex-direction: column;
+        align-self: center !important;
+        margin-top: 3rem;
+        margin-left: 0; } }
+  @media screen and (max-width: 500px) {
+    .card {
+      align-items: center; } }
+  .card .text h3,
+  .card .text h2 {
+    font-family: var(--bellefair);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    width: fit-content; }
+  .card .text h3 {
+    font-size: clamp(2.5rem, 5vw, 3.3rem);
+    font-weight: 300;
+    color: grey; }
+  .card .text h2 {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 300; }
+  .card .text p {
+    font-size: clamp(1.75rem, 3vw, 1.8rem);
+    color: var(--light-blue);
+    width: 80%;
+    line-height: 133%;
+    margin-bottom: 2rem; }
+  .card .image {
+    place-self: center; }
+    .card .image img {
+      height: 300px;
+      width: auto; }
+  .card .details {
+    margin-left: 3rem;
+    align-self: flex-end; }
+    .card .details .birthdate,
+    .card .details .missions,
+    .card .details .duration {
+      margin-bottom: 3rem; }
+  .card h2 {
+    font-family: var(--bellefair);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: clamp(1.25rem, 7vw, 1.75rem);
+    margin: 0.65rem 0;
+    color: var(--light-blue); }
+  .card li {
+    display: flex;
+    align-items: center; }
+    .card li::before {
+      content: "●";
+      font-size: 10px;
+      margin-right: 1rem;
+      color: var(--lightblue); }
+  .card li,
+  .card h3 {
+    font-weight: 400;
+    font-size: clamp(1rem, 5vw, 1.5rem); }

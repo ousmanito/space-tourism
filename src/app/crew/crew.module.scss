@@ -1,20 +1,18 @@
 .bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-image: url("/assets/crew/background-crew-desktop.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .container {
   width: 100%;
   margin-top: 3rem;
+  user-select: none;
 }
 
 .main {
@@ -25,7 +23,6 @@
   margin-left: 5%;
   margin-top: 4rem;
   padding: 1rem;
-  user-select: none;
 
   @media screen and (max-width: 1600px) {
     display: flex;
@@ -36,14 +33,137 @@
       justify-content: space-around;
     }
   }
+  @media screen and (max-width: 750px) {
+    .image img {
+      height: 300px;
+      margin: 0 4.5rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .image img {
+      height: 200px;
+      margin: 0 1rem;
+    }
+    .card .text {
+      h2 {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 1.65rem;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
   & > div {
     width: fit-content;
     height: fit-content;
     place-self: center;
   }
-  .left {
+  .text {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 2rem;
+  }
+
+  .footer {
+    width: fit-content;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    @media screen and (max-width: 750px) {
+      margin-top: 3rem;
+    }
+  }
+
+  .active {
+    background-color: white;
+  }
+
+  .previous,
+  .next {
+    align-self: center;
+    cursor: pointer;
+  }
+  .previous {
+  }
+  .next {
+    transform: rotate(180deg);
+  }
+}
+.left {
+  display: flex;
+  margin-top: 3rem;
+  h3,
+  h2 {
+    font-family: var(--bellefair);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+  h3 {
+    font-size: clamp(2.5rem, 5vw, 3.3rem);
+    font-weight: 300;
+    color: grey;
+  }
+
+  h2 {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 300;
+  }
+
+  p {
+    font-size: clamp(1.75rem, 3vw, 1.8rem);
+    color: var(--light-blue);
+    width: 80%;
+    line-height: 133%;
+    margin-bottom: 2rem;
+  }
+}
+
+.card {
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  margin-left: 4rem;
+  border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: initial;
+    width: 100%;
+    padding: 0rem;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    box-shadow: initial;
     margin-top: 3rem;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-self: center !important;
+      margin-top: 3rem;
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    align-items: center;
+  }
+  .text {
     h3,
     h2 {
       font-family: var(--bellefair);
@@ -61,122 +181,52 @@
       font-size: clamp(3rem, 7vw, 4.5rem);
       font-weight: 300;
     }
-
     p {
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.75rem, 3vw, 1.8rem);
       color: var(--light-blue);
       width: 80%;
       line-height: 133%;
       margin-bottom: 2rem;
     }
   }
-  .text {
-    width: 100%;
+  .image {
+    place-self: center;
+    img {
+      height: 300px;
+      width: auto;
+    }
+  }
+  .details {
+    margin-left: 3rem;
+    align-self: flex-end;
+    .birthdate,
+    .missions,
+    .duration {
+      margin-bottom: 3rem;
+    }
+  }
+  h2 {
+    font-family: var(--bellefair);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: clamp(1.25rem, 7vw, 1.75rem);
+    margin: 0.65rem 0;
+    color: var(--light-blue);
+  }
+  li {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin: 0 2rem;
-  }
-  .card {
-    backdrop-filter: blur(20px);
-    padding: 2rem;
-    margin-left: 4rem;
-    border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    display: flex;
-    @media screen and (max-width: 750px) {
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: initial;
-      width: 100%;
-      padding: 0rem;
-      margin: 0;
-      border-radius: 0;
-      border: 0;
-      box-shadow: initial;
-      margin-top: 3rem;
 
-      .details {
-        display: flex;
-        flex-direction: column;
-        align-self: center !important;
-        margin-top: 3rem;
-        margin-left: 0;
-      }
-    }
-    @media screen and (max-width: 500px) {
-      align-items: center;
-    }
-    .image {
-      place-self: center;
-      img {
-        height: 300px;
-        width: auto;
-      }
-    }
-    .details {
-      margin-left: 3rem;
-      align-self: flex-end;
-      .birthdate,
-      .missions,
-      .duration {
-        margin-bottom: 3rem;
-      }
-    }
-    h2 {
-      font-family: var(--bellefair);
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: clamp(1.25rem, 7vw, 1.75rem);
-      margin: 0.65rem 0;
-    }
-    li {
-      display: flex;
-      align-items: center;
-
-      &::before {
-        content: "●";
-        font-size: 10px;
-        margin-right: 1rem;
-        color: var(--lightblue);
-      }
-    }
-    li,
-    h3 {
-      font-weight: 400;
-      font-size: clamp(1rem, 5vw, 1.5rem);
-      color: var(--light-blue);
+    &::before {
+      content: "●";
+      font-size: 10px;
+      margin-right: 1rem;
+      color: var(--lightblue);
     }
   }
-
-  .footer {
-    width: fit-content;
-  }
-  .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: grey;
-    border: none;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-
-  .active {
-    background-color: white;
-  }
-
-  .previous,
-  .next {
-    align-self: center;
-    cursor: pointer;
-  }
-  .previous {
-  }
-  .next {
-    transform: rotate(180deg);
+  li,
+  h3 {
+    font-weight: 400;
+    font-size: clamp(1rem, 5vw, 1.5rem);
   }
 }

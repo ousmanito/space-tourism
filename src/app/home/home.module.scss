@@ -1,15 +1,13 @@
 .bg {
-  position: absolute;
-  min-height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-image: url("/assets/home/background-home-desktop.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+
   z-index: -1;
   @media screen and (min-width: 1500px) {
     background-image: url("/assets/home/background-home-4k.jpg");
@@ -20,15 +18,6 @@
   }
   @media screen and (max-width: 768px) {
     background-image: url("/assets/home/background-home-mobile.jpg");
-  }
-  @media screen and (max-height: 830px) and (max-width: 1400px) {
-    height: calc(100vh + 20%);
-  }
-  @media screen and (max-height: 780px) and (max-width: 1600px) {
-    height: calc(100vh + 25%);
-  }
-  @media screen and (max-height: 650px) and (max-width: 1600px) {
-    height: calc(165vh);
   }
 }
 
