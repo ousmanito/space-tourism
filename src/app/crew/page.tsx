@@ -1,5 +1,5 @@
 "use client";
-import React, { TouchEventHandler, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./crew.module.css";
 import Image from "next/image";
 import Title from "@/components/Title/Title";
@@ -81,11 +81,11 @@ export default function Page() {
     return () => window.removeEventListener("resize", handleResize);
   }, [hasSwapped]);
 
-  function handleTouchStart(e: TouchEvent) {
+  function handleTouchStart(e: React.TouchEvent<HTMLDivElement>) {
     setStartX(e.touches[0].clientX);
   }
 
-  function handleTouchMove(e: TouchEvent) {
+  function handleTouchMove(e: React.TouchEvent<HTMLDivElement>) {
     const x = e.touches[0].clientX;
     if (startX) {
       const diff = startX - x;
@@ -99,7 +99,8 @@ export default function Page() {
       }
     }
   }
-  function handleKeyDown(e: KeyboardEvent) {
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
     switch (e.key) {
       case "ArrowLeft":
         prev();
@@ -111,6 +112,7 @@ export default function Page() {
         break;
     }
   }
+
   const swap = (a: HTMLElement, b: HTMLElement) => {
     var aParent = a.parentNode;
     var bParent = b.parentNode;
@@ -168,7 +170,7 @@ export default function Page() {
           <div className={styles.content}>
             <div
               className={styles.left}
-              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
             >
               <span className={styles.previous}>
