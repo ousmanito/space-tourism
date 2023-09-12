@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { TouchEventHandler, useEffect, useState } from "react";
 import styles from "./crew.module.css";
 import Image from "next/image";
 import Title from "@/components/Title/Title";
@@ -161,14 +161,14 @@ export default function Page() {
       <div
         className={[bellefair.variable, styles.container].join(" ")}
         onKeyDown={handleKeyDown}
-        tabIndex="0"
+        tabIndex={0}
       >
         <Title id={2} />
         <div className={styles.main}>
           <div className={styles.content}>
             <div
               className={styles.left}
-              onTouchStart={handleTouchStart}
+              onTouchStart={(e) => handleTouchStart(e)}
               onTouchMove={handleTouchMove}
             >
               <span className={styles.previous}>
