@@ -15,6 +15,8 @@
     margin-left: 12.5vw;
     justify-content: space-between;
     align-items: center; }
+    .navbar .navbar-container a {
+      margin-left: 1.3rem; }
   .navbar .navlist-container,
   .navbar .sidebar-container {
     background-color: rgba(255, 255, 255, 0.1); }
@@ -22,10 +24,9 @@
     border-radius: clamp(0.5rem, 0.5vw, 1rem);
     backdrop-filter: blur(9px); }
   .navbar .sidebar-container {
-    display: none;
     position: absolute;
     box-sizing: border-box;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(200px);
     z-index: 3;
     top: 0;
     bottom: 0;
@@ -37,6 +38,8 @@
     @media screen and (max-width: 1300px) {
       .navbar .sidebar-container {
         width: 75vw; } }
+    .navbar .sidebar-container li {
+      margin-bottom: 4rem; }
   .navbar .sidebar-container.open {
     display: initial; }
   .navbar .sidebar {
@@ -48,8 +51,6 @@
   .navbar ul {
     display: flex;
     padding: 2rem; }
-    .navbar ul li {
-      margin-bottom: 5rem; }
   .navbar a {
     color: whitesmoke; }
     .navbar a:hover {
