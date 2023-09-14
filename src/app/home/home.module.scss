@@ -66,7 +66,7 @@
     font-weight: 300;
   }
   p {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.3rem, 5vw, 2rem);
     width: clamp(300px, 80%, 30vw);
     line-height: 137%;
   }
@@ -100,7 +100,7 @@
     margin-top: 7rem;
   }
   @media screen and (max-width: 500px) {
-    margin-top: 0;
+    margin-top: 0.5rem;
   }
 }
 
@@ -116,6 +116,9 @@
   transition: box-shadow 0.3s ease;
   box-shadow: 0px 0px 30px grey;
   animation: breathe 2s infinite ease;
+  @media screen and (max-width: 500px) {
+    animation: low-breathe 2s infinite ease;
+  }
 }
 
 @keyframes breathe {
@@ -130,7 +133,7 @@
   }
 }
 
-@keyframes deeep-breathe {
+@keyframes deep-breathe {
   0% {
     box-shadow: 0px 0px 5px grey;
   }
@@ -139,6 +142,30 @@
   }
   100% {
     box-shadow: 0px 0px 5px grey;
+  }
+}
+
+@keyframes low-breathe {
+  0% {
+    box-shadow: 0px 0px 10px grey;
+  }
+  50% {
+    box-shadow: 0px 0px 25px grey;
+  }
+  100% {
+    box-shadow: 0px 0px 10px grey;
+  }
+}
+
+@keyframes low-deep-breathe {
+  0% {
+    box-shadow: 0px 0px 5px grey;
+  }
+  50% {
+    box-shadow: 0px 0px 0.5rem grey;
+  }
+  100% {
+    box-shadow: 0px 0px 0.5rem grey;
   }
 }
 
