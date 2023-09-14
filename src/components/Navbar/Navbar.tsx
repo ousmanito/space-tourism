@@ -19,7 +19,7 @@ type Pages = {
 };
 
 const Navbar = () => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1400);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
