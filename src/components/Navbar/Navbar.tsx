@@ -27,16 +27,18 @@ const Navbar = () => {
       const desktop = window.innerWidth >= 1400;
       setIsDesktop(desktop);
       if (desktop) {
-        setIsMenuOpen(false); 
+        setIsMenuOpen(false);
       }
     };
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); 
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      handleResize(); 
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   const toggleMenu = () => {
@@ -61,7 +63,7 @@ const Navbar = () => {
           {!isDesktop && (
             <span className={styles["toggle-btn"]} onClick={() => toggleMenu()}>
               <Image
-                src={isMenuOpen? close : bars}
+                src={isMenuOpen ? close : bars}
                 width={30}
                 alt="toggleIcon"
                 className={styles.toggler}
