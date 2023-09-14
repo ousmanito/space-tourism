@@ -192,6 +192,7 @@ export default function Page() {
                     return (
                       <span
                         key={index}
+                        onClick={() => goTo(index)}
                         className={[
                           t.name == name ? styles.active : "",
                           styles.dot,

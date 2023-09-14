@@ -125,4 +125,4 @@
   .footer .distance h2 {
     font-family: var(--bellefair);
     text-transform: uppercase;
-    font-size: clamp(1.2rem, 5vw, 2rem); }
+    font-size: clamp(1.7rem, 5vw, 2rem); }
