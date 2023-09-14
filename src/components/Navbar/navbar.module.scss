@@ -16,7 +16,6 @@
     margin-left: 12.5vw;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
   }
   .navlist-container,
   .sidebar-container {
@@ -60,8 +59,10 @@
   }
   ul {
     display: flex;
-    gap: 1rem;
     padding: 2rem;
+    li {
+      margin-bottom: 5rem;
+    }
   }
 
   a {

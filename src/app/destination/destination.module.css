@@ -31,8 +31,9 @@
   @media screen and (max-width: 1400px) {
     .main {
       flex-direction: column;
-      align-items: center;
-      gap: 3rem; } }
+      align-items: center; }
+      .main .image {
+        margin-bottom: 3rem; } }
   .main .image {
     width: clamp(250px, 21vw, 800px);
     display: flex;
@@ -101,8 +102,9 @@
   display: flex;
   width: 75%;
   margin-left: 12.5%;
-  justify-content: flex-start;
-  gap: 15%; }
+  justify-content: flex-start; }
+  .footer .time {
+    margin-left: 15%; }
   .footer .time h3,
   .footer .distance h3 {
     margin-bottom: 1.2rem;

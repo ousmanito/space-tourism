@@ -14,8 +14,7 @@
     width: 75vw;
     margin-left: 12.5vw;
     justify-content: space-between;
-    align-items: center;
-    gap: 1rem; }
+    align-items: center; }
   .navbar .navlist-container,
   .navbar .sidebar-container {
     background-color: rgba(255, 255, 255, 0.1); }
@@ -48,8 +47,9 @@
     z-index: 400; }
   .navbar ul {
     display: flex;
-    gap: 1rem;
     padding: 2rem; }
+    .navbar ul li {
+      margin-bottom: 5rem; }
   .navbar a {
     color: whitesmoke; }
     .navbar a:hover {

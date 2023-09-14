@@ -1,6 +1,6 @@
 .title {
   width: 75%;
-  margin-left: 12.5%;
+  margin-left: clamp(12.5%, 18vw, calc(12.5% + 3rem));
   font-weight: 200;
   text-transform: uppercase;
   font-size: clamp(1.75rem, 6vw, 2.25rem); }
