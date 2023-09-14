@@ -2,6 +2,13 @@
   overflow-x: hidden;
   user-select: none;
   margin-top: 2rem;
+  @media screen and (max-width: 500px) {
+    margin-top: 1rem;
+    .logo {
+      height: 32px;
+      width: 32px;
+    }
+  }
   .navbar-container {
     display: flex;
     position: relative;

@@ -60,12 +60,12 @@ const Navbar = () => {
       <nav>
         <div className={styles["navbar-container"]}>
           <a href="/home">
-            <Image src={Logo} alt="logo" />
+            <Image src={Logo} alt="logo" className={styles.logo} />
           </a>
 
           {isOpen && (
             <span className={styles["toggle-btn"]} onClick={() => toggleMenu()}>
-              <Image src={menu ? close : bars} width={30} alt="toggleIcon" />
+              <Image src={menu ? close : bars} width={30} alt="toggleIcon" className={styles.toggler} />
             </span>
           )}
           {!isOpen && (
