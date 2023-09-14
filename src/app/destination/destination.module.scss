@@ -108,10 +108,11 @@
   width: 75%;
   margin: 2rem 0;
   margin-left: 12.5%;
-  height: 1px;
+  height: 2px;
   padding: 0;
   box-sizing: content-box;
-  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.6;
+  background-color: white;
 }
 
 .footer {
@@ -119,23 +120,32 @@
   width: 75%;
   margin-left: 12.5%;
   justify-content: flex-start;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    text-align: center;
+  }
   .time {
     margin-left: 15%;
+    @media screen and (max-width: 600px) {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
   }
 
   .time,
   .distance {
     h3 {
       margin-bottom: 1.2rem;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 4.9px;
-      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      color: var(--light-blue);
     }
 
     h2 {
       font-family: var(--bellefair);
       text-transform: uppercase;
-      font-size: clamp(1rem, 5vw, 2rem);
+      font-size: clamp(1.2rem, 5vw, 2rem);
     }
   }
 }
