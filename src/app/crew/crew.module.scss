@@ -34,9 +34,21 @@
     }
   }
   @media screen and (max-width: 750px) {
+    margin-top: 1rem;
     .image img {
       height: 300px;
       margin: 0 4.5rem;
+    }
+    .left {
+      margin-top: 0;
+    }
+
+    .card {
+      margin-top: 1rem;
+    }
+
+    .text > p {
+      margin-bottom: 0;
     }
   }
   @media screen and (max-width: 500px) {
@@ -53,6 +65,9 @@
       }
       p {
         font-size: 1.25rem;
+        @media screen and (max-width: 750px) {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -192,8 +207,11 @@
   .image {
     place-self: center;
     img {
+      position: relative;
       height: 300px;
       width: auto;
+      border-bottom: 2px solid rgba(#d0d6f9, 0.2);
+      // border-radius: 2%;
     }
   }
   .details {

@@ -147,6 +147,7 @@ export default function Page() {
   const goTo = (index: number) => {
     setStaffIndex(index);
   };
+
   const [startX, setStartX] = useState<number | null>(null);
   const [staffIndex, setStaffIndex] = useState(0);
   const crewObject: Crew = data.crew[staffIndex];
@@ -207,7 +208,12 @@ export default function Page() {
           </div>
           <div className={styles.card}>
             <div className={styles.image}>
-              <img src={imageUrl} alt="staff-body" />
+              <img
+                src={imageUrl}
+                alt="staff-body"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+              />
             </div>
             <div className={styles.details}>
               <div className={styles.birthdate}>

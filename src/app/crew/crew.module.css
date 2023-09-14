@@ -31,9 +31,17 @@
         margin-top: 5rem;
         justify-content: space-around; } }
   @media screen and (max-width: 750px) {
-    .main .image img {
-      height: 300px;
-      margin: 0 4.5rem; } }
+    .main {
+      margin-top: 1rem; }
+      .main .image img {
+        height: 300px;
+        margin: 0 4.5rem; }
+      .main .left {
+        margin-top: 0; }
+      .main .card {
+        margin-top: 1rem; }
+      .main .text > p {
+        margin-bottom: 0; } }
   @media screen and (max-width: 500px) {
     .main .image img {
       height: 200px;
@@ -44,6 +52,9 @@
       font-size: 1.65rem; }
     .main .card .text p {
       font-size: 1.25rem; } }
+  @media screen and (max-width: 500px) and (max-width: 750px) {
+    .main .card .text p {
+      margin-bottom: 0; } }
   .main > div {
     width: fit-content;
     height: fit-content;
@@ -152,8 +163,10 @@
   .card .image {
     place-self: center; }
     .card .image img {
+      position: relative;
       height: 300px;
-      width: auto; }
+      width: auto;
+      border-bottom: 2px solid rgba(208, 214, 249, 0.2); }
   .card .details {
     margin-left: 3rem;
     align-self: flex-end; }
