@@ -1,10 +1,13 @@
 .title {
   width: 75%;
+  color: whitesmoke;
   margin-left: clamp(12.5%, 18vw, calc(12.5% + 3rem));
   font-weight: 200;
   text-transform: uppercase;
-  font-size: clamp(1.75rem, 6vw, 2.25rem); }
+  font-size: clamp(1.2rem, 6vw, 2.25rem); }
+  .title span:nth-child(2) {
+    color: grey; }
 
 .index {
-  font-weight: 600;
+  font-weight: 500;
   margin-right: 1rem; }
