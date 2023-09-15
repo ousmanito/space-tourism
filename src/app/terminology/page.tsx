@@ -25,6 +25,7 @@ export default function Page() {
   const [windowWidth, setWindowWidth] = useState(500);
   const imageUrl =
     windowWidth <= 1000 ? tech.images.landscape : tech.images.portrait;
+  const titleText = 'Space Launch 101'
 
   useEffect(() => {
     function handleResize() {
@@ -41,7 +42,7 @@ export default function Page() {
     <>
       <span className={styles.bg}></span>
       <div className={[bellefair.variable, styles.container].join(" ")}>
-        <Title id={2} />
+        <Title id={2} text={titleText} />
         <main>
           <div className={styles.left}>
             <ul className={styles.buttons}>

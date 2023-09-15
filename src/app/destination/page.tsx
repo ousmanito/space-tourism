@@ -24,11 +24,12 @@ export default function Page() {
   const desc = planetObject.description;
   const averageDist = planetObject.distance;
   const travelTime = planetObject.travel;
+  const titleText = 'Pick your destination'
   return (
     <>
       <span className={styles.bg}></span>
       <div className={[styles.container, bellefair.variable].join(" ")}>
-        <Title id={1} />
+        <Title id={1} text={titleText} />
         <div className={styles.main}>
           <div className={styles.image}>
             <Image

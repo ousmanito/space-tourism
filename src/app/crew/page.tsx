@@ -158,6 +158,7 @@ export default function Page() {
   const missions = crewObject.missions;
   const durationMissions = getMissionDuration(crewObject.durationMissions);
   const imageUrl = crewObject.images.webp;
+  const titleText = 'Meet your crew'
   return (
     <>
       <span className={styles.bg}></span>
@@ -166,7 +167,7 @@ export default function Page() {
         onKeyDown={handleKeyDown}
         tabIndex={0}
       >
-        <Title id={2} />
+        <Title id={2} text={titleText}/>
         <div className={styles.main}>
           <div className={styles.content}>
             <div

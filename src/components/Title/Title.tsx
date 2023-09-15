@@ -2,15 +2,16 @@ import React from "react";
 import styles from "./title.module.css";
 import { NextPage } from "next";
 
-interface Props  {
-  id: number
+type Props = {
+  id: number;
+  text: string;
 }
 
 const Title: NextPage<Props> = (props) => {
   return (
     <div className={styles.title}>
       <span className={styles.index}>{String(props.id).padStart(2, "0")}</span>
-      <span>Pick your destination</span>
+      <span>{props.text}</span>
     </div>
   );
 };
