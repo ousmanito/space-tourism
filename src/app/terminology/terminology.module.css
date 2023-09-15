@@ -1,0 +1,94 @@
+.bg {
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
+  background-size: cover;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh; }
+
+.container {
+  margin-top: 5rem; }
+  .container main {
+    width: 100%;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 12.5vw auto 1fr 1fr; }
+    @media screen and (max-width: 1800px) {
+      .container main {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr; }
+        .container main .image {
+          grid-column: 1/4;
+          grid-row: 2/3;
+          justify-self: center; } }
+    @media screen and (max-width: 760px) {
+      .container main {
+        grid-template-columns: 1fr;
+        justify-items: center; }
+        .container main .left {
+          display: flex;
+          flex-direction: column; }
+          .container main .left .text {
+            grid-column: 1/2;
+            text-align: center; }
+        .container main .image {
+          grid-row: 1/3;
+          grid-column: 1/4; }
+          .container main .image img {
+            width: 100%; }
+        .container main .buttons {
+          display: flex;
+          justify-content: center; } }
+  .container .left {
+    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: auto auto; }
+  .container .text {
+    grid-column: 3/4;
+    place-self: center;
+    margin: 0 1rem; }
+    .container .text > * {
+      margin-bottom: 1rem; }
+    .container .text h4 {
+      color: var(--light-blue);
+      font-size: clamp(1.3rem, 3vw, 1.5rem); }
+    .container .text h2 {
+      font-family: var(--bellefair);
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      text-transform: uppercase;
+      font-weight: 300;
+      margin: 2rem 0; }
+    .container .text p {
+      font-size: clamp(1.5rem, 4vw, 1.75rem);
+      color: var(--light-blue);
+      line-height: 133%; }
+      @media (max-width: 1800px) and (min-width: 1000px) {
+        .container .text p {
+          width: 65%; } }
+  .container .image {
+    grid-column: 4/5;
+    justify-self: end;
+    align-self: center; }
+  .container .buttons li {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-family: var(--bellefair);
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    width: calc(2.2 * clamp(2.5rem, 4vw, 4rem));
+    height: calc(2.2 * clamp(2.5rem, 4vw, 4rem)); }
+    .container .buttons li.active {
+      background-color: white;
+      color: black;
+      border: 4px solid rgba(0, 0, 0, 0.6); }
+    .container .buttons li:hover {
+      border: 4px solid rgba(0, 0, 0, 0.6);
+      background-color: lightgrey;
+      color: rgba(0, 0, 0, 0.7); }
