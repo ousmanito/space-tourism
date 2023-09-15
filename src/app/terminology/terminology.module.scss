@@ -11,6 +11,10 @@
 
 .container {
   margin-top: 5rem;
+  @media screen and (max-width: 760px) {
+    margin-top: 2rem;
+  }
+
   main {
     width: 100%;
     margin-top: 3rem;
@@ -28,7 +32,6 @@
     @media screen and (max-width: 760px) {
       grid-template-columns: 1fr;
       justify-items: center;
-
       .left {
         display: flex;
         flex-direction: column;
@@ -51,9 +54,12 @@
       .buttons {
         display: flex;
         justify-content: center;
-        margin-bottom: 1.5rem;
+        margin: 2rem 0;
         li {
           margin: 1rem;
+          font-size: clamp(1.7rem, 3vw, 2rem);
+          width: calc(2.7 * clamp(1.7rem, 3vw, 2rem));
+          height: calc(2.7 * clamp(1.7rem, 3vw, 2rem));
         }
       }
     }
