@@ -17,7 +17,7 @@
     width: 100%;
     margin-top: 3rem;
     display: grid;
-    grid-template-columns: 12.5vw auto 1fr 1fr; }
+    grid-template-columns: 12.5vw 1fr 4fr 3fr; }
     @media screen and (max-width: 1800px) {
       .container main {
         grid-template-rows: 1fr 1fr;
@@ -25,7 +25,10 @@
         .container main .image {
           grid-column: 1/4;
           grid-row: 2/3;
-          justify-self: center; } }
+          justify-self: center; }
+        .container main .buttons {
+          align-self: end;
+          margin-right: 3rem; } }
     @media screen and (max-width: 760px) {
       .container main {
         grid-template-columns: 1fr;
@@ -47,6 +50,7 @@
         .container main .buttons {
           display: flex;
           justify-content: center;
+          align-self: center;
           margin: 2rem 0; }
           .container main .buttons li {
             margin: 1rem;
@@ -83,24 +87,26 @@
     grid-column: 4/5;
     justify-self: end;
     align-self: center; }
-  .container .buttons li {
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    font-family: var(--bellefair);
-    padding: 1rem;
-    margin: 2rem;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    width: calc(2.2 * clamp(2.5rem, 4vw, 4rem));
-    height: calc(2.2 * clamp(2.5rem, 4vw, 4rem)); }
-    .container .buttons li.active {
-      background-color: white;
-      color: black;
-      border: 4px solid rgba(0, 0, 0, 0.6); }
-    .container .buttons li:hover {
-      border: 4px solid rgba(0, 0, 0, 0.6);
-      background-color: lightgrey;
-      color: rgba(0, 0, 0, 0.7); }
+  .container .buttons {
+    margin-right: 6rem; }
+    .container .buttons li {
+      display: flex;
+      width: fit-content;
+      justify-content: center;
+      align-items: center;
+      font-size: clamp(2.5rem, 4vw, 3rem);
+      font-family: var(--bellefair);
+      padding: 1rem;
+      margin: 2rem;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      width: calc(2.2 * clamp(2.5rem, 4vw, 3rem));
+      height: calc(2.2 * clamp(2.5rem, 4vw, 3rem)); }
+      .container .buttons li.active {
+        background-color: white;
+        color: black;
+        border: 4px solid rgba(0, 0, 0, 0.6); }
+      .container .buttons li:hover {
+        border: 4px solid rgba(0, 0, 0, 0.6);
+        background-color: lightgrey;
+        color: rgba(0, 0, 0, 0.7); }
