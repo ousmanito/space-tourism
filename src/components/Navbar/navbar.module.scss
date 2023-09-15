@@ -1,12 +1,15 @@
 .navbar {
   overflow-x: hidden;
   user-select: none;
-  margin-top: 2rem;
+  margin-top: 3rem;
   @media screen and (max-width: 500px) {
-    margin-top: 1rem;
     .logo {
       height: 32px;
       width: 32px;
+    }
+    .toggler {
+      width: 26px;
+      height: calc(26px * (26 / 30));
     }
   }
   .navbar-container {

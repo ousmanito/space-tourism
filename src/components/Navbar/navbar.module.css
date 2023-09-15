@@ -1,13 +1,14 @@
 .navbar {
   overflow-x: hidden;
   user-select: none;
-  margin-top: 2rem; }
+  margin-top: 3rem; }
   @media screen and (max-width: 500px) {
-    .navbar {
-      margin-top: 1rem; }
-      .navbar .logo {
-        height: 32px;
-        width: 32px; } }
+    .navbar .logo {
+      height: 32px;
+      width: 32px; }
+    .navbar .toggler {
+      width: 26px;
+      height: calc(26px * (26 / 30)); } }
   .navbar .navbar-container {
     display: flex;
     position: relative;
