@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./terminology.module.css";
-import Image from "next/image";
 import Title from "@/components/Title/Title";
 import { bellefair } from "../fonts";
-import imgg from "/public/assets/technology/";
 
 var data = require("public/assets/data");
 
