@@ -16,6 +16,10 @@
     margin-left: 12.5vw;
     justify-content: space-between;
     align-items: center; }
+    @media screen and (max-width: 700px) {
+      .navbar .navbar-container {
+        width: 89vw;
+        margin-left: 5.5vw; } }
     .navbar .navbar-container a {
       margin-left: 1.3rem; }
   .navbar .navlist-container,
