@@ -121,6 +121,10 @@
     letter-spacing: 4.9px;
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: var(--light-blue); }
+    @media screen and (max-width: 600px) {
+      .footer .time h3,
+      .footer .distance h3 {
+        margin-bottom: 0.7rem; } }
   .footer .time h2,
   .footer .distance h2 {
     font-family: var(--bellefair);

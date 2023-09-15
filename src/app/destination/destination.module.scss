@@ -140,6 +140,9 @@
       letter-spacing: 4.9px;
       font-size: clamp(1.2rem, 3vw, 1.5rem);
       color: var(--light-blue);
+      @media screen and (max-width: 600px) {
+        margin-bottom: 0.7rem;
+      }
     }
 
     h2 {
