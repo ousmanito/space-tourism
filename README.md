@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Space Tourism
 
-## Getting Started
+Realistic project that helps me improve my coding skills. 
 
-First, run the development server:
+### Links
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Project URL: https://space-tourism.info
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshots
+![Capture d’écran du 2023-10-18 00-51-27](https://github.com/ousmanito/space-tourism/assets/96242923/b1a30620-7502-4f1f-9b8a-dcfcb2522a49)
+![Capture d’écran du 2023-10-18 00-52-37](https://github.com/ousmanito/space-tourism/assets/96242923/2067f613-dbf1-410a-9240-01779657fd88)
+![Capture d’écran du 2023-10-18 00-53-13](https://github.com/ousmanito/space-tourism/assets/96242923/56650a4d-9845-4db2-b139-f85e32184070)
+![Capture d’écran du 2023-10-18 00-53-45](https://github.com/ousmanito/space-tourism/assets/96242923/47460df2-5541-480d-9614-62fe3e7e5a41)
+![Capture d’écran du 2023-10-18 00-54-07](https://github.com/ousmanito/space-tourism/assets/96242923/aa8a8905-df3e-4b88-8e00-9eb144a5556f)
+![Capture d’écran du 2023-10-18 00-54-28](https://github.com/ousmanito/space-tourism/assets/96242923/39cd3a9b-54e0-4d4e-89e6-ce42a10eac65)
+![Capture d’écran du 2023-10-18 00-54-58](https://github.com/ousmanito/space-tourism/assets/96242923/8e88c894-7afe-4a76-ae0d-77a4a51ba0ba)
+![Capture d’écran du 2023-10-18 00-55-30](https://github.com/ousmanito/space-tourism/assets/96242923/cdcda665-216e-443e-a0a3-e1032f1a5fe9)
+![Capture d’écran du 2023-10-18 00-55-57](https://github.com/ousmanito/space-tourism/assets/96242923/c0f55ec5-c52e-4dce-ad98-9312d7700759)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
 
-## Learn More
+## Overview
 
-To learn more about Next.js, take a look at the following resources:
+### The Challenge
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Users should be able to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## My Process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
+
+
