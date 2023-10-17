@@ -50,12 +50,14 @@ li {
   list-style: none; }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   font-family: var(--bellefair);
   text-transform: uppercase;
   font-size: clamp(0.85rem, 2vw, 1.2rem);
-  margin: 0.5rem;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding-top: 3rem;
   color: rgba(255, 255, 255, 0.4); }
