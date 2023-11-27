@@ -18,9 +18,6 @@ export default function RootLayout({
       <body className={[bellefair.variable, barlow.className].join(' ')}>
         <Navbar />
         {children}
-        <p className='footer'>
-          © 2023 Ousmane Bathily. All rights reserved
-        </p>
       </body>
     </html>
   );
